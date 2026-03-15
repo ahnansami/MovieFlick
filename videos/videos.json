@@ -1,0 +1,9 @@
+[
+{
+"id":"video1",
+"title":"Example Video",
+"description":"My first video",
+"thumbnail":"images/placeholder.jpg",
+"download":"https://drive.google.com/file/d/XXXX/view"
+}
+]
