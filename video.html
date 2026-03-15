@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Video</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container" id="videoPage"></div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search)
+
+const id = params.get("id")
+
+fetch("videos/videos.json")
+
+.then(res => res.json())
+
+.then(videos => {
+
+const video = videos.find(v => v.id === id)
+
+document.getElementById("videoPage").innerHTML = `
+
+<h1>${video.title}</h1>
+
+<img src="${video.thumbnail}" width="300">
+
+<p>${video.description}</p>
+
+<a href="${video.download}" target="_blank">
+
+<button>Download Video</button>
+
+</a>
+
+`
+
+})
+
+</script>
+
+</body>
+
+</html>
